@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "627354388337",
-    "firebase_url": "https://login-demo-757b8.firebaseio.com",
-    "project_id": "login-demo-757b8",
-    "storage_bucket": "login-demo-757b8.appspot.com"
+    "project_number": "658154197120",
+    "firebase_url": "https://login-demo-9d3c8.firebaseio.com",
+    "project_id": "login-demo-9d3c8",
+    "storage_bucket": "login-demo-9d3c8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:627354388337:android:852ff426914ae5a2",
+        "mobilesdk_app_id": "1:658154197120:android:852ff426914ae5a2",
         "android_client_info": {
           "package_name": "com.example.logindemo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "627354388337-hmfmphbc7gvfgksueejblaec332i66qr.apps.googleusercontent.com",
+          "client_id": "658154197120-l2i7nh1i7d670k012a9ot0e0bac7nvcn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAJ7KNe3p_0cZJcGC_skRVpXL-IdDv6KUA"
+          "current_key": "AIzaSyDlCc3o3UhFyRGE2sYCOG42cWeaBZ85KIM"
         }
       ],
       "services": {
