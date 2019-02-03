@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
 
@@ -20,16 +20,16 @@ class _LoginPageState extends State<LoginPage> {
   String    _password;
   Formtype  _formtype = Formtype.login;
 
-  void validateAndSave() {
+  bool validateAndSave() {
     final form = formKey.currentState;
     if (form.validate()) {
       form.save();
-      print('Form is valid. Email: $_email, Password: $_password');
-      // return true;
+      // print('Form is valid. Email: $_email, Password: $_password');
+      return true;
     }
     else {
-      print('Form is Invalid. Email: $_email, Password: $_password');
-      // return false;
+      // print('Form is Invalid. Email: $_email, Password: $_password');
+      return false;
     }
   }
 
@@ -46,17 +46,17 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   /* Need to figure out firebase integration, conflicting packages*/
-  // void validateAndSubmit() async {
-  //   if (validateAndSave()) {
-  //     try {
-  //       FirebaseUser user = await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email, password: _password);
-  //       print('Signed in: ${user.uid}');
-  //     } 
-  //     catch (e) {
-  //       print('Error: $e');
-  //     }
-  //   }
-  // }
+  void validateAndSubmit() async {
+    if (validateAndSave()) {
+      try {
+        FirebaseUser user = await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email, password: _password);
+        print('Signed in: ${user.uid}');
+      } 
+      catch (e) {
+        print('Error: $e');
+      }
+    }
+  }
 
   @override
     Widget build(BuildContext context) {
@@ -98,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
           new RaisedButton(
             child: new Text('Login', style: new TextStyle(fontSize: 20.0)),
             // onPressed: validateAndSubmit,
-            onPressed: validateAndSave,
+            onPressed: validateAndSubmit,
           ),
           new FlatButton(
             child: new Text('Create an account', style: new TextStyle(fontSize: 20.0)),
@@ -110,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
           new RaisedButton(
             child: new Text('Create an account', style: new TextStyle(fontSize: 20.0)),
             // onPressed: validateAndSubmit,
-            onPressed: validateAndSave,
+            onPressed: validateAndSubmit,
           ),
           new FlatButton(
             child: new Text('Have an account? Login', style: new TextStyle(fontSize: 20.0)),
